@@ -1,0 +1,21 @@
+{
+  "name": "ShrimpCluster — Inteligencia Camaronera",
+  "short_name": "ShrimpCluster",
+  "description": "Plataforma global de inteligencia del sector camaronero: producción, precios, exportaciones, ciencia y mercados",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#020d1a",
+  "theme_color": "#00c9a7",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "food"],
+  "lang": "es",
+  "scope": "./"
+}

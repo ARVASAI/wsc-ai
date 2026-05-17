@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <defs>
+    <radialGradient id="globeBg" cx="45%" cy="40%" r="55%">
+      <stop offset="0%" style="stop-color:#1a6db5"/>
+      <stop offset="40%" style="stop-color:#0e4d8c"/>
+      <stop offset="100%" style="stop-color:#062a5e"/>
+    </radialGradient>
+    <radialGradient id="globeShine" cx="35%" cy="30%" r="50%">
+      <stop offset="0%" style="stop-color:#4db8ff;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#062a5e;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="globeEdge" cx="50%" cy="50%" r="50%">
+      <stop offset="80%" style="stop-color:#0a3d7a;stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:#000d1a;stop-opacity:0.5"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shrimp-glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="globeClip">
+      <circle cx="210" cy="210" r="185"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="600" fill="#000d1a"/>
+
+  <!-- ── GLOBE ── -->
+  <!-- Base sphere -->
+  <circle cx="210" cy="210" r="185" fill="url(#globeBg)"/>
+  
+  <!-- Ocean texture lines (latitude) -->
+  <g clip-path="url(#globeClip)" opacity="0.15">
+    <ellipse cx="210" cy="210" rx="185" ry="40" fill="none" stroke="#7dd3fc" stroke-width="1"/>
+    <ellipse cx="210" cy="210" rx="175" ry="80" fill="none" stroke="#7dd3fc" stroke-width="1"/>
+    <ellipse cx="210" cy="210" rx="155" ry="115" fill="none" stroke="#7dd3fc" stroke-width="1"/>
+    <ellipse cx="210" cy="210" rx="120" ry="145" fill="none" stroke="#7dd3fc" stroke-width="1"/>
+    <ellipse cx="210" cy="210" rx="70" ry="168" fill="none" stroke="#7dd3fc" stroke-width="1"/>
+    <!-- Longitude -->
+    <line x1="210" y1="25" x2="210" y2="395" stroke="#7dd3fc" stroke-width="1"/>
+    <line x1="100" y1="30" x2="150" y2="395" stroke="#7dd3fc" stroke-width="1"/>
+    <line x1="320" y1="30" x2="270" y2="395" stroke="#7dd3fc" stroke-width="1"/>
+  </g>
+
+  <!-- Continents (simplified stylized) -->
+  <g clip-path="url(#globeClip)" fill="white" opacity="0.85">
+    <!-- North America -->
+    <path d="M 95 95 Q 110 80 135 85 Q 155 88 165 100 Q 175 115 170 130 Q 160 148 150 155 Q 135 162 120 158 Q 100 152 88 138 Q 78 122 85 108 Z"/>
+    <!-- South America -->
+    <path d="M 120 178 Q 135 170 148 175 Q 160 182 165 198 Q 168 218 162 240 Q 155 262 140 270 Q 125 274 112 265 Q 98 252 95 232 Q 92 210 100 192 Z"/>
+    <!-- Europe -->
+    <path d="M 210 78 Q 225 72 238 80 Q 248 88 245 100 Q 240 112 228 115 Q 215 118 206 110 Q 198 100 202 88 Z"/>
+    <!-- Africa -->
+    <path d="M 215 128 Q 235 122 248 132 Q 262 145 262 168 Q 262 195 252 215 Q 240 232 222 236 Q 205 238 195 225 Q 183 210 183 188 Q 183 162 193 145 Z"/>
+    <!-- Asia blob -->
+    <path d="M 265 82 Q 295 72 318 85 Q 338 98 340 118 Q 340 138 322 148 Q 302 156 282 148 Q 262 138 258 118 Q 255 98 265 82 Z"/>
+    <!-- Australia -->
+    <path d="M 290 198 Q 312 192 325 202 Q 336 215 332 230 Q 326 244 310 248 Q 294 250 284 238 Q 275 225 278 210 Z"/>
+  </g>
+
+  <!-- Globe shine overlay -->
+  <circle cx="210" cy="210" r="185" fill="url(#globeShine)"/>
+  <circle cx="210" cy="210" r="185" fill="url(#globeEdge)"/>
+
+  <!-- Globe border -->
+  <circle cx="210" cy="210" r="185" fill="none" stroke="#1a8fe0" stroke-width="3" opacity="0.8"/>
+  <circle cx="210" cy="210" r="180" fill="none" stroke="#4db8ff" stroke-width="1" opacity="0.3"/>
+
+  <!-- ── SHRIMP (white, overlaid on globe) ── -->
+  <g filter="url(#shrimp-glow)">
+    <!-- Body curve - main arc -->
+    <path d="M 310 85 Q 360 110 368 160 Q 374 210 350 250 Q 322 292 278 308 Q 235 322 195 305 Q 162 290 152 258 Q 142 225 162 200 Q 178 180 200 185 Q 222 190 218 215 Q 214 238 196 244" 
+          stroke="white" stroke-width="16" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Body segments (fine lines) -->
+    <path d="M 310 85 Q 360 110 368 160 Q 374 210 350 250 Q 322 292 278 308 Q 235 322 195 305 Q 162 290 152 258 Q 142 225 162 200 Q 178 180 200 185 Q 222 190 218 215 Q 214 238 196 244" 
+          stroke="rgba(200,235,255,0.3)" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <!-- Antennae -->
+    <path d="M 310 85 Q 275 52 245 42" stroke="white" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.9"/>
+    <path d="M 310 85 Q 330 48 355 38" stroke="white" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+    <path d="M 310 85 Q 295 55 268 48" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+    <!-- Rostrum -->
+    <path d="M 318 82 L 345 62" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+    <!-- Tail fan -->
+    <path d="M 196 244 Q 168 272 152 292" stroke="white" stroke-width="11" fill="none" stroke-linecap="round"/>
+    <path d="M 196 244 Q 172 278 170 302" stroke="white" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.8"/>
+    <path d="M 196 244 Q 182 282 188 308" stroke="white" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.6"/>
+    <path d="M 196 244 Q 205 284 214 306" stroke="white" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.5"/>
+    <!-- Walking legs -->
+    <path d="M 240 195 Q 225 215 210 225" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
+    <path d="M 255 205 Q 242 228 228 240" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.5"/>
+    <path d="M 270 215 Q 258 240 246 252" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.4"/>
+    <!-- Eye -->
+    <circle cx="318" cy="83" r="8" fill="white"/>
+    <circle cx="320" cy="81" r="4" fill="#062a5e"/>
+    <circle cx="322" cy="79" r="1.5" fill="white"/>
+  </g>
+
+  <!-- ── WSC AI TEXT ── -->
+  <!-- W -->
+  <text x="415" y="230" 
+        font-family="Arial Black, Impact, sans-serif" 
+        font-size="148" 
+        font-weight="900"
+        fill="#00aaff"
+        filter="url(#glow)"
+        letter-spacing="-4">W</text>
+  <!-- S -->
+  <text x="465" y="340" 
+        font-family="Arial Black, Impact, sans-serif" 
+        font-size="148" 
+        font-weight="900"
+        fill="#00aaff"
+        filter="url(#glow)"
+        letter-spacing="-4">S</text>
+  <!-- C -->
+  <text x="415" y="450" 
+        font-family="Arial Black, Impact, sans-serif" 
+        font-size="148" 
+        font-weight="900"
+        fill="#00aaff"
+        filter="url(#glow)"
+        letter-spacing="-4">C</text>
+
+  <!-- AI superscript -->
+  <text x="530" y="185" 
+        font-family="Arial Black, Impact, sans-serif" 
+        font-size="68" 
+        font-weight="900"
+        fill="#00e5ff"
+        filter="url(#glow)"
+        opacity="0.95">AI</text>
+
+  <!-- Divider line -->
+  <line x1="400" y1="470" x2="590" y2="470" stroke="#00aaff" stroke-width="2" opacity="0.4"/>
+
+</svg>
